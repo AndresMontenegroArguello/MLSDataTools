@@ -18,7 +18,13 @@
 SELECT 
 COALESCE(COUNT("SalesCloseDate"), 0) 
 AS "Sold Count"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Sold Volume Metric */
 
@@ -26,48 +32,90 @@ SELECT
 SUM(COALESCE("SalesClosePrice", 0))
 AS "Sold Volume"
 FROM "propertyraw";
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Sold Average Metric */
 
 SELECT 
 AVG("SalesClosePrice")
 AS "Sold Avg"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Sold Median Price Metric */
 
 SELECT
 QUANTILE(COALESCE("SalesClosePrice", 0), 0.5)
 AS "Sold Median"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Active Average Price Metric */
 
 SELECT
 AVG("LISTPRICE")
 AS "Active Average"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Days On Market Metric */
 
 SELECT
 AVG(COALESCE("DAYSONMARKET", 0)) 
 AS "DOM"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Cumulative Days on Market Metric */
 
 SELECT
 AVG(COALESCE("DaysOnMarketCumulative", 0))
 AS "CDOM"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Sold-To-List-Ratio Metric = Sold Average Price / Active Average Price */
 
 SELECT 
 AVG("SaleslosePrice")/AVG("LISTPRICE")
 AS "Sold/List Ratio"
-FROM "propertyraw";
+FROM "propertyraw"
+WHERE
+"MLSID" = 'RMLS'
+AND
+"offmarketdate" > '2009-01-01'
+AND
+"LISTDATE" < '2009-12-31';
 
 /* Active Count Metric */
 
