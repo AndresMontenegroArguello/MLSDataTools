@@ -53,7 +53,7 @@ AND
 "LISTDATE" < '2009-12-31';
 
 /* Sold Median Price Metric */
-
+/* DEBUGGING */
 SELECT
 QUANTILE(COALESCE("SalesClosePrice", 0), 0.5)
 AS "Sold Median"
