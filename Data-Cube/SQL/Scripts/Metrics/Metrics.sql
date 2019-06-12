@@ -131,7 +131,7 @@ AND
 "LISTDATE" < '2009-12-31';
 
 /* Monthly Supply Metric */
-
+/* DEBUGGING */
 SELECT
 (SELECT
 COUNT(*)
