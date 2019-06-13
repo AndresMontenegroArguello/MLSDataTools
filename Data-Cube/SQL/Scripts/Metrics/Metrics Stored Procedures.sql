@@ -249,7 +249,6 @@ $RESULT$ LANGUAGE plpgsql;
 
 SELECT ActiveCountMetric() AS "Active Count"
 
-
 /*
 *-----------------------*
 * Monthly Supply Metric *
@@ -262,8 +261,8 @@ DECLARE
 	MonthlySupply NUMERIC;
 BEGIN
 	SELECT 
-	(SELECT
-	COUNT(*)
+	/* *,("Active Count"::FLOAT/"Sold Count"::FLOAT) */
+	ActiveCountMetric()/SoldCountMetric()
 	INTO MonthlySupply
 	FROM "propertyraw"
 	WHERE
@@ -273,8 +272,7 @@ BEGIN
 	"offmarketdate" > '2009-01-01'
 	AND
 	"LISTDATE" < '2009-12-31'
-	)
-	)/COUNT(*)
+	);
 RETURN MonthlySupply;
 END;
 $RESULT$ LANGUAGE plpgsql;
