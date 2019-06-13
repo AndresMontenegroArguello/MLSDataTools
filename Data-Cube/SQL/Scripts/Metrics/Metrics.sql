@@ -236,7 +236,7 @@ FROM "propertyraw"
 (
 /* Sold-To-List-Ration Metric = Sold Average Price / Active Average Price */
 SELECT 
-AVG("SaleslosePrice")/AVG("LISTPRICE")
+AVG("SalesClosePrice")/AVG("LISTPRICE")
 AS "Sold/List Ratio"
 FROM "propertyraw"
 ),
