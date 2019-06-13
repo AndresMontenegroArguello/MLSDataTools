@@ -232,6 +232,7 @@ SELECT
 AVG(COALESCE("DaysOnMarketCumulative", 0))
 AS "CDOM"
 FROM "propertyraw"
+),
 (
 /* Sold-To-List-Ration Metric = Sold Average Price / Active Average Price */
 SELECT 
