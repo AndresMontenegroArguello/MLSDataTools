@@ -8,7 +8,7 @@
 */
 
 CREATE TABLE propertyraw (
-						UNIT4_UNITE3DIM TEXT,
+			UNIT4_UNITE3DIM TEXT,
                         UNIT2RENTMON TEXT,
                         AREASECONDARY TEXT,
                         LakeChainName TEXT,
