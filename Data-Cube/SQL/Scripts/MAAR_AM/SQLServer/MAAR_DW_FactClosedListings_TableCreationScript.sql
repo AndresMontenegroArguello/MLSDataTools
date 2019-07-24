@@ -10,9 +10,9 @@
 CREATE TABLE [FactClosedListings] (
                         /* Keys */
                         [PropertyListingId] INTEGER FOREIGN KEY ([PropertyListingId]) REFERENCES [Property]([id]),
-                        [ListDate] DATETIME2 FOREIGN KEY ([ListDate]) REFERENCES [DimDate]([PK_Date]),
-                        [SalesCloseDate] DATETIME2 FOREIGN KEY ([SalesCloseDate]) REFERENCES [DimDate]([PK_Date]),
-                        [OffMarketDate] DATETIME2 FOREIGN KEY ([OffMarketDate]) REFERENCES [DimDate]([PK_Date]),
+                        [ListDate] DATETIME FOREIGN KEY ([ListDate]) REFERENCES [DimDate]([PK_Date]),
+                        [SalesCloseDate] DATETIME FOREIGN KEY ([SalesCloseDate]) REFERENCES [DimDate]([PK_Date]),
+                        [OffMarketDate] DATETIME FOREIGN KEY ([OffMarketDate]) REFERENCES [DimDate]([PK_Date]),
                         /* Measures */
                         [SoldCount] INTEGER,
                         [SoldVolume] NUMERIC,
